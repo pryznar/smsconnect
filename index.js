@@ -1,12 +1,3 @@
-// var Db = require('mysql-activerecord');
-
-// var db = new Db.Adapter({
-//     server: '46.28.111.103',
-//     username: 'nejleparfemy',
-//     password: 'prdelacka2',
-//     database: 'nejleparfemy'
-// });
-
 var moment = require('moment');
 var md5 = require('MD5')
 var request = require('superagent')
@@ -65,7 +56,6 @@ var SmsConnect = function(settings) {
     request
     .get('http://api.smsbrana.cz/smsconnect/http.php')
     .end(function(err, response) {
-      console.log(response);
       cb(response)
     })
   }
