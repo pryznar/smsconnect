@@ -7,6 +7,8 @@ Send and receive SMS with node.js (for Czech Republic)
 
 ## Installation
 
+	npm install smsconnect
+
 ## Usage
 
 ### Initializtaion
