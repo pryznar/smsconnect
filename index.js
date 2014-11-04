@@ -57,6 +57,25 @@ var SmsConnect = function(settings) {
     })
   }
 
+  this.send = function(number, text, cb) {
+
+    var data  = this.getAuthData()
+    data.action = 'send_sms'
+    data.number = number
+    data.message = text
+
+    var get = []
+    for (var key in data) {
+      get.push(key + '=' + data[key])
+    }
+    var url = this.apiScript + get.join('&')
+    request(url, function (error, response, body) {
+      if (error) cb(false)
+      cb(response.body)
+    })
+
+  }
+
 }
 
 exports.SmsConnect = SmsConnect;
