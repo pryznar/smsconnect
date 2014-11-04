@@ -1,6 +1,6 @@
 var moment = require('moment');
 var md5 = require('MD5')
-var request = require('superagent')
+var request = require('request')
 
 var SmsConnect = function(settings) {
   
@@ -25,7 +25,7 @@ var SmsConnect = function(settings) {
     } else {
       var result = {}
       var salt = this.salt(10)
-      var time = moment().format('YYYYMMDD') + 'T' + moment().format('Hmmss')
+      var time = moment().format('YYYYMMDD') + 'T' + moment().format('HHmmss')
 
       result.login = this.login
       result.sul = salt
@@ -51,12 +51,9 @@ var SmsConnect = function(settings) {
       get.push(key + '=' + data[key])
     }
     var url = this.apiScript + get.join('&')
-    console.log(get)
-
-    request
-    .get('http://api.smsbrana.cz/smsconnect/http.php')
-    .end(function(err, response) {
-      cb(response)
+    request(url, function (error, response, body) {
+      if (error) cb(false)
+      cb(response.body)
     })
   }
 
