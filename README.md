@@ -1,6 +1,8 @@
 SmsConnect
 ==========
 
+<img align="right" src="http://www.smsbrana.cz/images/logo.png">
+
 Send and receive SMS with node.js (for Czech Republic)
 
 [Registration](http://www.smsbrana.cz/registrace.html)
