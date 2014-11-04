@@ -1,6 +1,6 @@
 {
   "name": "smsconnect",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Send and receive SMS with node.js (for Czech Republic)",
   "main": "index.js",
   "scripts": {
