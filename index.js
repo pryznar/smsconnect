@@ -1,6 +1,7 @@
 var moment = require('moment');
 var md5 = require('MD5')
 var request = require('request')
+var parser = require('xml2json');
 
 var SmsConnect = function(settings) {
   
@@ -53,7 +54,7 @@ var SmsConnect = function(settings) {
     var url = this.apiScript + get.join('&')
     request(url, function (error, response, body) {
       if (error) cb(false)
-      cb(response.body)
+      cb(parser.toJson(response.body))
     })
   }
 
@@ -71,7 +72,7 @@ var SmsConnect = function(settings) {
     var url = this.apiScript + get.join('&')
     request(url, function (error, response, body) {
       if (error) cb(false)
-      cb(response.body)
+      cb(parser.toJson(response.body))
     })
 
   }
