@@ -13,7 +13,7 @@ Send and receive SMS with node.js (for Czech Republic)
 
 ## Usage
 
-### Initializtaion
+### Initialization
 
 ```javascript
 var Sms = require('smsconnect')
