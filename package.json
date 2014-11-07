@@ -16,9 +16,11 @@
     "url": "http://github.com/pryznar/smsconnect.git"
   },
   "dependencies": {
-      "MD5": ">= 1.2.1",
-      "request": ">= 2.47.0",
-      "moment": ">= 2.8.3",
-      "xml2json": ">= 0.5.1"
+    "MD5": ">= 1.2.1",
+    "moment": ">= 2.8.3",
+    "request": ">= 2.47.0",
+    "should": "^4.2.1",
+    "xml2json": ">= 0.5.1",
+    "randomstring": ">= 1.0.3"
   }
 }

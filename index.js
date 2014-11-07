@@ -1,7 +1,8 @@
-var moment = require('moment');
-var md5 = require('MD5')
-var request = require('request')
-var parser = require('xml2json');
+var moment = require('moment')
+  , md5 = require('MD5')
+  , request = require('request')
+  , parser = require('xml2json')
+  , randomstring = require("randomstring")
 
 var SmsConnect = function(settings) {
   
@@ -11,16 +12,12 @@ var SmsConnect = function(settings) {
 
   this.salt = function(length) {
 
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    return randomstring.generate(length)
 
-    for( var i=0; i < length; i++ )
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-    return text;
   }
 
   this.getAuthData = function() {
+
     if (this.login === null || this.password === null) {
       return null
     } else {
@@ -34,11 +31,6 @@ var SmsConnect = function(settings) {
       result.hash = md5(this.password + time + salt)
       return result
     }
-  }
-
-  var _getAnswer = function(data) {
-
-    return data
 
   }
 
